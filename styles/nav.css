@@ -1,0 +1,161 @@
+* {
+    outline: none;
+    font-size: 12px;
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(1, 26, 20);
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.bannerWrapper {
+    background: linear-gradient(#0d4b7436, rgb(1, 26, 20)), url("../assets/header-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 1rem;
+}
+
+.navBar {
+    margin-top: 0rem;
+    padding-left: 2rem;
+    flex-wrap: wrap;
+}
+
+.links {
+    width: 50%;
+    /* background-color: tan; */
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 2rem;
+    cursor: pointer;
+}
+
+.navBar a:first-child {
+    text-decoration: underline;
+}
+
+.banner {
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    height: 300px;
+    width: 80%;
+    max-width: 300px;
+    margin: auto;
+    /* background-color: teal; */
+}
+
+.bannerTitle {
+    flex-direction: column;
+}
+
+.bannerTitle p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    margin: 0;
+}
+.bannerTitle p:last-child {
+    font-size: 36px;
+    font-weight: bolder;
+    line-height: 4rem;
+    margin-bottom: 8px;
+}
+
+.bannerText {
+    margin-bottom: 2rem;
+    font-style: italic;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.281);
+    font-style: italic;
+    font-weight: 600;
+    padding: 0.5rem;
+}
+.bannerBtn {
+    width: 120px;
+}
+
+.cardsWrapper {
+    background: linear-gradient(rgb(1, 26, 20), #0d4b744d);
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 6rem;
+}
+
+.cardsTitle {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-style: italic;
+    text-align: center;
+    color: white;
+    padding: 3rem 1rem 0.5rem 1rem;
+}
+
+.cardsLine {
+    width: 100px;
+    margin: 0 auto;
+    border-bottom: 2px solid white;
+
+}
+
+.card {
+    max-width: 250px;
+    /* max-width: 340px; */
+    width: 90%;
+    /* height: 300px; */
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
+    margin: 3rem 0.5rem 0 0.5rem;
+
+}
+
+.cardImg {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.cardText {
+    flex-direction: column;
+    padding: 1rem 2.5rem 1.5rem 1.5rem;
+    align-items: flex-start;
+}
+
+.cardText p {
+    font-size: 0.8rem;
+    letter-spacing: -0.50px;
+}
+
+.cardTextTitle {
+    font-style: italic;
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+}
+
+.cardBtn {
+    margin-top: 1rem;
+    width: 110px;
+    background-color: rgb(1, 26, 20);
+    color: white;
+}
