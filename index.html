@@ -14,34 +14,7 @@
 </head>
 
 <body>
-    <div class="modal flex" id="modal">
-        <img class="modalImg" src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_0.jpg"
-            alt="LOL hero">
-        <span onclick="document.getElementById('modal').style.display='none'" class="modalCloseIcon">&#10006;</span>
-        <div class="modalText flex">
-            <div>
-
-                <b class="modalTextTitle">
-                    Aatrox
-                </b>
-                <p class="modalTextSubtitle">
-                    La Espada Darkin
-                </p>
-            </div>
-            <p class="">
-                Aatrox y sus hermanos, que alguna vez fueron respetados defensores de Shurima contra el Vacío, se
-                convirtieron en una amenaza aún mayor para Runaterra y los derrotaron con hechicería mortal usada
-                con astucia. Pero, después de siglos de encarcelamiento...
-            </p>
-            <b>
-                Tags:
-            </b>
-            <p>Fighter, Tank</p>
-            <button class="btn cardBtn modalBtn">
-                Juega ahora
-            </button>
-        </div>
-    </div>
+    <div id='modal'></div>
     <div class="bannerWrapper">
         <nav class="navBar flex">
             <img src="./assets/league-of-legends-logo.png" width="90" alt="LOL logo" />
@@ -69,35 +42,30 @@
         <p class="cardsLine"></p>
     </div>
     <div class="cardsWrapper flex" id="cardMap">
-        <!-- <div class="card" id="card">
-            <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_0.jpg" alt="LOL hero"
-                class="cardImg" />
-            <div class="cardText flex">
-                <b class="cardTextTitle" id="name">
-                </b>
-                <p class="" id="description">
-                </p>
-                <button class="btn cardBtn" onclick="document.getElementById('modal').style.display='flex'">
-                    Saber Más
-                </button>
-            </div>
-        </div> -->
-
     </div>
     </div>
     <script type="text/javascript" src="./importJson.js"></script>
     <script>
         let valuesArray = Object.values(heroes.data);
-        console.log(valuesArray);
-        // valuesArray.map(e=>(
         for (let i of valuesArray) {
             var card = document.createElement("DIV");
-            console.log(i.image.full);
-            card.innerHTML = "<div class='card' id='card'><img src ='http://ddragon.leagueoflegends.com/cdn/img/champion/loading/" + i.id + '_0.jpg' +   "' alt = 'LOL hero' class= 'cardImg' /><div class='cardText flex'><b class='cardTextTitle' id='name'>" + i.name + "</b><p class='' id='description'>" + i.blurb + "</p><button class='btn cardBtn' onclick='document.getElementById('modal').style.display='flex''>Saber Más</button></div></div>"
+            card.innerHTML = "<div class='card' id='card'><img src ='http://ddragon.leagueoflegends.com/cdn/img/champion/loading/" + i.id + '_0.jpg' + "' alt = 'LOL hero' class= 'cardImg' /><div class='cardText flex'><b class='cardTextTitle' id='name'>" + i.name + "</b><p class='' id='description'>" + i.blurb + "</p><button class='btn cardBtn' onclick='openModal(`" + i.id + "`, `" + i.title + "`, `" + i.blurb + "`, `" + i.tags + "`)'>Saber Más</button></div></div>"
             document.getElementById('cardMap').append(card);
-            }
+        }
     </script>
-
+    <script>
+        function openModal(name, title, text, tags) {
+            console.log(tags)
+            var modal = document.createElement("DIV");
+            modal.innerHTML = "<div class='modal flex' id='tempModal'><img class='modalImg' src='http://ddragon.leagueoflegends.com/cdn/img/champion/loading/" + name + "_0.jpg' alt='LOL hero'><span onclick='closeModal()' class='modalCloseIcon'>&#10006;</span><div class='modalText flex'><div><b class='modalTextTitle'>" + name + "</b><p class='modalTextSubtitle'> " + title + " </p></div><p class=''>" + text + "</p><b>Tags:</b><p>" + tags + " </p><button class='btn cardBtn modalBtn'>Juega ahora</button></div></div>"
+            document.getElementById('modal').append(modal);
+        }
+    </script>
+    <script>
+        function closeModal() {
+            document.getElementById('tempModal').remove();
+        }
+    </script>
 </body>
 
 </html>
