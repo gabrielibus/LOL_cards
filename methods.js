@@ -3,8 +3,8 @@ const requestOptions = {
     redirect: 'follow'
 };
 
-const fetchURL = "http://ddragon.leagueoflegends.com/cdn/11.2.1/data/es_MX/champion.json";
-const imgURL = "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/";
+const fetchURL = "https://ddragon.leagueoflegends.com/cdn/11.2.1/data/es_MX/champion.json";
+const imgURL = "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/";
 
 const fetchData = (cb) => {
     fetch(fetchURL, requestOptions)
